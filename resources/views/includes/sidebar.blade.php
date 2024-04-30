@@ -154,7 +154,7 @@
             </a>
             <ul class="nav nav-treeview">
             <li class="nav-item">
-                <a href="{{ route('adC.show') }}" class="nav-link">
+                <a href="{{ route('addC.show') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Categories</p>
                 </a>
@@ -163,6 +163,18 @@
                 <a href="{{ route('allC.show') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>All Categories</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('addAddress.show') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Addresses</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('allAddresses.show') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Addresses</p>
                 </a>
               </li>
               

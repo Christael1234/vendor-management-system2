@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AddressController;
 
 
 
@@ -52,7 +53,11 @@ Route::get('/adB', [App\Http\Controllers\HomeController::class, 'adB'])->name('a
 
 Route::get('/allC', [App\Http\Controllers\HomeController::class, 'allC'])->name('allC.show');
 
-Route::get('/adC', [App\Http\Controllers\HomeController::class, 'adC'])->name('adC.show');
+Route::get('/adC', [App\Http\Controllers\HomeController::class, 'addC'])->name('addC.show');
+
+Route::get('/adA', [App\Http\Controllers\HomeController::class, 'addA'])->name('addAddress.show');
+
+Route::get('/alA', [App\Http\Controllers\HomeController::class, 'allA'])->name('allAddresses.show');
 
 
 //product routes
@@ -103,6 +108,18 @@ Route::put('/home/{category}/update', [App\Http\Controllers\CategoryController::
 Route::delete('/home/{category}/delete', [App\Http\Controllers\CategoryController::class, 'delete'])->name('category.delete');
 
 //address routes
+
+Route::get('/addA', [App\Http\Controllers\AddressController::class, 'create'])->name('address.create');
+
+Route::post('/home', [App\Http\Controllers\AddressController::class, 'store'])->name('address.store');
+
+Route::get('/home/{address}/edit', [App\Http\Controllers\AddressController::class, 'edit'])->name('address.edit');
+
+Route::put('/home/{address}/update', [App\Http\Controllers\AddressController::class, 'update'])->name('address.update');
+
+Route::delete('/home/{address}/delete', [App\Http\Controllers\AddressController::class, 'delete'])->name('address.delete');
+
+
 
 
 

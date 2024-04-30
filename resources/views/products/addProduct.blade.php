@@ -19,6 +19,28 @@
                     <input type="text" name="name" class="form-control" placeholder="Enter Product Name">
                   </div>
                   <div class="form-group">
+                  <label>Brands</label>
+                  <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                    <option selected="selected"></option>
+                   
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Categories</label>
+                  <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                    <option selected="selected"></option>
+                   
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Units</label>
+                  <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
+                    <option selected="selected"></option>
+                   
+                  </select>
+                </div>
+          
+                  <div class="form-group">
                     <label>Price</label>
                     <input  class="form-control" type="text" name="price"  placeholder="Enter Product Price">
                   </div>

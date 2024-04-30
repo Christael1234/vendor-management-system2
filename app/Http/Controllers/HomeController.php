@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Product;
+use App\Models\Products;
 use App\Models\Unit;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Address;
+
 
 
 use Illuminate\Http\Request;
@@ -40,12 +42,12 @@ class HomeController extends Controller
 
     public function allP()
     {
-        $products = Product::get();
+        $products = Products::get();
         return view('products.allProducts', ['products' => $products]);
        
     }
 
-    public function adC()
+    public function addC()
     {
         return view('category.addCategory');
     }
@@ -85,6 +87,16 @@ class HomeController extends Controller
     public function createU(){
         return view('unit.addUnit');
     
+    }
+
+    public function addA(){
+        return view('address.addAddress');
+    }
+
+    public function allA(){
+        $addresses = Address::get();
+        return view('address.allAddresses', ['addresses' => $addresses]);
+
     }
 
 }
