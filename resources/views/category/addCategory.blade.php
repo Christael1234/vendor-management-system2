@@ -16,7 +16,7 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Category Name</label>
-                    <input name="name"  type="name" class="form-control"  placeholder="Enter Unit">
+                    <input name="name"  type="name" class="form-control"  placeholder="Enter Category">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Description</label>
@@ -27,11 +27,13 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Add Category</button>
+                  <button type="submit" class="btn btn-primary swalaDefaultSuccess">Add Category</button>
                 </div>
               </form>
             </div>
             <!-- /.card -->
+
+            
 
 
 @endsection

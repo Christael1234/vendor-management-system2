@@ -66,6 +66,17 @@ Route::get('/addP', [ProductController::class, 'create'])->name('product.create'
 
 Route::post('/createProduct', [ProductController::class, 'store'])->name('product.store');
 
+Route::get('/product/{product}/edit', [App\Http\Controllers\ProductController::class, 'edit'])->name('product.edit');
+
+
+Route::get('/product/{product}/details', [App\Http\Controllers\ProductController::class, 'details'])->name('product.details');
+
+
+Route::put('/product/{product}/update', [App\Http\Controllers\ProductController::class, 'update'])->name('product.update');
+
+Route::delete('/product/{product}/delete', [App\Http\Controllers\ProductController::class, 'delete'])->name('product.delete');
+
+
 
 //unit routes
 
@@ -99,13 +110,13 @@ Route::delete('/home/{brand}/delete', [App\Http\Controllers\BrandController::cla
 
 Route::get('/addC', [App\Http\Controllers\CategoryController::class, 'createCategory'])->name('category.create');
 
-Route::post('/home', [App\Http\Controllers\CategoryController::class, 'storeCategory'])->name('category.store');
+Route::post('/homeC', [App\Http\Controllers\CategoryController::class, 'storeCategory'])->name('category.store');
 
-Route::get('/home/{category}/edit', [App\Http\Controllers\CategoryController::class, 'edit'])->name('category.edit');
+Route::get('/category/{category}/edit', [App\Http\Controllers\CategoryController::class, 'edit'])->name('category.edit');
 
-Route::put('/home/{category}/update', [App\Http\Controllers\CategoryController::class, 'update'])->name('category.update');
+Route::put('/category/{category}/update', [App\Http\Controllers\CategoryController::class, 'update'])->name('category.update');
 
-Route::delete('/home/{category}/delete', [App\Http\Controllers\CategoryController::class, 'delete'])->name('category.delete');
+Route::delete('/category/{category}/delete', [App\Http\Controllers\CategoryController::class, 'delete'])->name('category.delete');
 
 //address routes
 
@@ -113,11 +124,14 @@ Route::get('/addA', [App\Http\Controllers\AddressController::class, 'create'])->
 
 Route::post('/home', [App\Http\Controllers\AddressController::class, 'store'])->name('address.store');
 
-Route::get('/home/{address}/edit', [App\Http\Controllers\AddressController::class, 'edit'])->name('address.edit');
+Route::get('/address/{address}/edit', [App\Http\Controllers\AddressController::class, 'editA'])->name('address.edit');
 
-Route::put('/home/{address}/update', [App\Http\Controllers\AddressController::class, 'update'])->name('address.update');
+Route::put('/address/{address}/update', [App\Http\Controllers\AddressController::class, 'update'])->name('address.update');
 
-Route::delete('/home/{address}/delete', [App\Http\Controllers\AddressController::class, 'delete'])->name('address.delete');
+Route::delete('/address/{address}/delete', [App\Http\Controllers\AddressController::class, 'delete'])->name('address.delete');
+
+
+
 
 
 

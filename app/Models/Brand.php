@@ -12,4 +12,8 @@ class Brand extends Model
         'description'
     ];
     use HasFactory;
+    public function products()
+    {
+        return $this->hasMany(Products::class);
+    }
 }

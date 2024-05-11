@@ -35,8 +35,15 @@ class HomeController extends Controller
 
     public function adP()
     {
-        return view('products.addProduct');
+        $brands = Brand::get();
+        $categories = Category::get();
+        $units = Unit::get();
+        
+        return view('products.addProduct', ['brands' => $brands, 'categories' => $categories, 'units' => $units]);
+       
     }
+
+    
 
   
 

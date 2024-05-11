@@ -21,15 +21,18 @@ class AddressController extends Controller
 
     public function store(Request $request){
         $data = $request->validate([
-            'name' => 'required',
-             'description' => 'nullable'
+            'Address' => 'required',
+             'City' => 'required',
+             'State' => 'required'
+
+
             
         ]);
          
          $newAddress = Address::create($data);
          
 
-        return redirect(route('address.create'));
+        return redirect(route('allAddresses.show'));
         
 
 
@@ -39,7 +42,7 @@ class AddressController extends Controller
     
 }
 
-public function edit(address $address){
+public function editA(address $address){
     return view('address.editAddress', ['address' => $address]);
 
 
@@ -47,9 +50,10 @@ public function edit(address $address){
 
 public function update(Address $address, Request $request){
     $data = $request->validate([
-        'name' => 'required',
+        'Address' => 'required',
+        'City' => 'required',
+        'State' => 'required'        
         
-        'description' => 'nullable'
         
     ]);
      $address->update($data);

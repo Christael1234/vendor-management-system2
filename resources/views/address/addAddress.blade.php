@@ -12,20 +12,24 @@
             @csrf
             @method('post')
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">City</label>
-                    <input name="name"  type="name" class="form-control"  placeholder="Enter Unit">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Address</label>
+                    <input name="Address"  type="name" class="form-control"  placeholder="Enter Address">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">State</label>
-                    <input name="description" type="text" class="form-control"  placeholder="Enter Description">
+                    <label for="exampleInputEmail1">state</label>
+                    <input name="State"  type="name" class="form-control"  placeholder="Enter State">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">city</label>
+                    <input name="City" type="text" class="form-control"  placeholder="Enter City">
                   </div>
                  
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Add Address</button>
+                  <button type="submit" class="btn btn-primary toastraDefaultSuccess">Add Address</button>
                 </div>
               </form>
             </div>

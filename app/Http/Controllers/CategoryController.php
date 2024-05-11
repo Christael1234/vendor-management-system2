@@ -29,7 +29,7 @@ class CategoryController extends Controller
          $newCategory = Category::create($data);
          
 
-        return redirect(route('category.create'));
+        return redirect(route('allC.show'));
         
 
 

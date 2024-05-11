@@ -34,7 +34,7 @@ class UnitController extends Controller
          $newUnit = Unit::create($data);
          
 
-        return redirect(route('unit.create'));
+        return redirect(route('allU.show'));
         
 
 

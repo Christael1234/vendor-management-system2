@@ -3,7 +3,7 @@
 @section('content')
 <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add Category</h3>
+                <h3 class="card-title">Add Brand</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -13,8 +13,8 @@
             @method('post')
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Category Name</label>
-                    <input name="name"  type="name" class="form-control"  placeholder="Enter Unit">
+                    <label for="exampleInputEmail1">Brand Name</label>
+                    <input name="name"  type="name" class="form-control"  placeholder="Enter Brand">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Description</label>
@@ -25,7 +25,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Add Category</button>
+                  <button type="submit" class="btn btn-primary swalaDefaultSuccess">Add Brand</button>
                 </div>
               </form>
             </div>

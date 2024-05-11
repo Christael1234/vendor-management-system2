@@ -5,11 +5,11 @@
 
 <div class="card">
               <div class="card-header">
-                <h3 class="card-title">All Categories</h3>
-                <div>
-         <a href="{{route('brand.create')}}">Create a Category</a>
-      </div>
+                <h3 class="card-title">All Brands
+                </h3>
               </div>
+              
+              
               
               <!-- /.card-header -->
               <div class="card-body">
@@ -27,7 +27,7 @@
                   </tr>
  </thead>
                   <tbody>
-                  @foreach($brands as $brand)
+                  @foreach($brands->reverse() as $brand)
 
 
                   <tr>
@@ -36,16 +36,17 @@
                     <td>{{$brand->description}}</td>
                     <td>{{$brand->status}}</td>
                     <td>
-               <a href="{{route('brand.edit', ['brand' => $brand])}}" class="d-inline">Edit</a>
-            
+               
+               <a href="{{ route('brand.edit', ['brand' => $brand]) }}" class="btn btn-primary">Edit</a>
+                        <!-- Delete form -->
+                        <form id="delete-form-{{$brand->id}}" method="post" action="{{ route('brand.delete', ['brand' => $brand]) }}" class="d-inline">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-danger swaldDefaultSuccess">Delete</button>
+                        </form>
+              
+                 
 
-
-                  
-                    <form method="post" action="{{route('brand.delete', ['brand' => $brand ])}}" class="d-inline">
-                  @csrf
-                  @method('delete')
-                  <input type="submit" value="Delete"/>
-               </form>
 
                  
 
@@ -58,6 +59,8 @@
                 </tbody>
                 
                 </table>
+                <br>
+        <a href="{{ route('brand.create', ['brand' => $brand]) }}" class="btn btn-info">Add Brand</a>
               </div>
               <!-- /.card-body -->
             </div>

@@ -25,7 +25,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Add Unit</button>
+                  <button type="submit" class="btn btn-primary swalaDefaultSuccess">Add Unit</button>
                 </div>
               </form>
             </div>

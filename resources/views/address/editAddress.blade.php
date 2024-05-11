@@ -11,14 +11,27 @@
               <form method="post" action="{{route('address.update', ['address' => $address])}}">
             @csrf
             @method('put')
+            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+     @endif
                 <div class="card-body">
                   <div class="form-group">
-                    <label>State</label>
-                    <input name="name"  type="name" class="form-control"  placeholder="Enter Brand" value="{{$address->state}}">
+                    <label>Address</label>
+                    <input name="Address"  type="name" class="form-control"  placeholder="Enter Brand" value="{{$address->Address}}">
                   </div>
                   <div class="form-group">
-                    <label>Description</label>
-                    <input name="description" type="text" class="form-control"  placeholder="Enter Description" value="{{$address->city}}">
+                    <label>State</label>
+                    <input name="State" type="text" class="form-control"  placeholder="Enter Description" value="{{$address->State}}">
+                  </div>
+                  <div class="form-group">
+                    <label>City</label>
+                    <input name="City"  type="name" class="form-control"  placeholder="Enter Brand" value="{{$address->City}}">
                   </div>
                  
                 </div>

@@ -10,7 +10,7 @@
                 <h3 class="card-title">All Units</h3>
               </div>
               <div>
-         <a href="{{route('unit.create')}}">Create a Unit</a>
+         
       </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -28,7 +28,8 @@
                   </tr>
  </thead>
                   <tbody>
-                  @foreach($units as $unit)
+                  @foreach($units->reverse() as $unit)
+                 
 
 
                   <tr>
@@ -37,17 +38,16 @@
                     <td>{{$unit->description}}</td>
                     <td>{{$unit->status}}</td>
                     <td>
-               <a href="{{route('unit.edit', ['unit' => $unit])}}" class="d-inline">Edit</a>
-            
+              
 
-
-                  
-                    <form method="post" action="{{route('unit.delete', ['unit' => $unit ])}}" class="d-inline">
-                  @csrf
-                  @method('delete')
-                  <input type="submit" value="Delete"/>
-               </form>
-
+               <a href="{{ route('unit.edit', ['unit' => $unit]) }}" class="btn btn-primary">Edit</a>
+                        <!-- Delete form -->
+                        <form id="delete-form-{{$unit->id}}" method="post" action="{{ route('unit.delete', ['unit' => $unit]) }}" class="d-inline">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-danger swaldDefaultSuccess">Delete</button>
+                        </form>
+              
                  
 
                     </td>
@@ -59,7 +59,10 @@
                 </tbody>
                 
                 </table>
-              </div>
+              
+              <br>
+        <a href="{{ route('unit.create', ['unit' => $unit]) }}" class="btn btn-info">Add Unit</a>
+</div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->

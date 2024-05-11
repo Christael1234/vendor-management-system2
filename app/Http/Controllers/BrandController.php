@@ -10,7 +10,9 @@ class BrandController extends Controller
    
     public function index()
     {
-    
+        $brands = Brand::get();
+        return view('brands.allBrands', ['brands' => $brands]);
+
     }
 
     public function createB(){
@@ -29,7 +31,7 @@ class BrandController extends Controller
          $newBrand = Brand::create($data);
          
 
-        return redirect(route('brand.create'));
+        return redirect(route('allB.show'));
         
 
 
@@ -64,6 +66,9 @@ public function delete(Brand $brand){
 
 
 }
+
+
+
 
 
 }

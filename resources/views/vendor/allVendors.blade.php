@@ -7,7 +7,7 @@
               <div class="card-header">
                 <h3 class="card-title">All Addresses</h3>
                 <div>
-    
+         <a href="{{route('address.create')}}">Create an Address</a>
       </div>
               </div>
               
@@ -17,7 +17,6 @@
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Address</th>
                     <th>State</th>
                     <th>City</th>
                     <th>Actions<th>
@@ -32,26 +31,19 @@
 
                   <tr>
                     <td>{{$address->id}}</td>
-                    <td>{{$address->Address}}</td>
-                    <td>{{$address->State}}</td>
-                    <td>{{$address->City}}</td>
+                    <td>{{$address->state}}</td>
+                    <td>{{$address->city}}</td>
                     <td>
-               
+               <a href="{{route('address.edit', ['address' => $address])}}" class="d-inline">Edit</a>
             
 
 
                   
-
-               
-               <a href="{{ route('address.edit', ['address' => $address]) }}" class="btn btn-primary">Edit</a>
-                        <!-- Delete form -->
-                        <form id="delete-form-{{$address->id}}" method="post" action="{{ route('address.delete', ['address' => $address]) }}" class="d-inline">
-                            @csrf
-                            @method('delete')
-                            <button type="submit" class="btn btn-danger toastrdDefaultSuccess">Delete</button>
-                        </form>
-              
-                 
+                    <form method="post" action="{{route('brand.delete', ['brand' => $brand ])}}" class="d-inline">
+                  @csrf
+                  @method('delete')
+                  <input type="submit" value="Delete"/>
+               </form>
 
                  
 
@@ -64,8 +56,6 @@
                 </tbody>
                 
                 </table>
-                <br>
-        <a href="{{ route('address.create', ['address' => $address]) }}" class="btn btn-info">Add Address</a>
               </div>
               <!-- /.card-body -->
             </div>
