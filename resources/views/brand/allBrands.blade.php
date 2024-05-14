@@ -27,11 +27,11 @@
                   </tr>
  </thead>
                   <tbody>
-                  @foreach($brands->reverse() as $brand)
+                  @foreach($brands as $key=> $brand)
 
 
                   <tr>
-                    <td>{{$brand->id}}</td>
+                    <td>{{$key+1}}</td>
                     <td>{{$brand->name}}</td>
                     <td>{{$brand->description}}</td>
                     <td>{{$brand->status}}</td>

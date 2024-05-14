@@ -8,7 +8,7 @@
               <!-- /.card-header -->
               <!-- form start -->
             
-              <form method="post" action="{{route('address.store')}}" >
+              <form id="add-address-form" method="post" action="{{route('address.store')}}" >
             @csrf
             @method('post')
                 <div class="card-body">
@@ -29,7 +29,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary toastraDefaultSuccess">Add Address</button>
+                  <button type="submit" class="btn btn-primary" id="add-address-btn">Add Address</button>
                 </div>
               </form>
             </div>

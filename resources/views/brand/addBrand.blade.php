@@ -8,7 +8,7 @@
               <!-- /.card-header -->
               <!-- form start -->
             
-              <form method="post" action="{{route('brand.store')}}" >
+              <form id="add-brand-form" method="post" action="{{route('brand.store')}}" >
             @csrf
             @method('post')
                 <div class="card-body">
@@ -25,7 +25,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary swalaDefaultSuccess">Add Brand</button>
+                  <button type="submit" class="btn btn-primary" id="add-brand-btn">Add Brand</button>
                 </div>
               </form>
             </div>

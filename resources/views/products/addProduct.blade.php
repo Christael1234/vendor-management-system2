@@ -8,7 +8,7 @@
               <!-- /.card-header -->
               <!-- form start -->
               
-              <form method="post" action="{{route('product.store')}}" >
+              <form id="add-product-form" method="post" action="{{route('product.store')}}" >
             @csrf
             @method('post')
 
@@ -82,7 +82,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Add Product</button>
+                  <button type="submit" class="btn btn-primary" id="add-product-btn">Add Product</button>
                 </div>
               </form>
             </div>

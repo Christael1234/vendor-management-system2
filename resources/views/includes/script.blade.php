@@ -76,50 +76,14 @@
 
 
     </script>
-    <script>
-    $(document).ready(function() {
-        $('.delete-unit-btn').click(function(e) {
-            e.preventDefault(); // Prevent form submission
-
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $(this).closest('form').submit(); // Submit the form if confirmed
-                }
-            });
-        });
-    });
-
-    $(document).ready(function() {
-        $('.delete-brand-btn').click(function(e) {
-            e.preventDefault(); // Prevent form submission
-
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    $(this).closest('form').submit(); // Submit the form if confirmed
-                }
-            });
-        });
-    });
-
+  
+    
+<script>
     $(document).ready(function() {
         $('.delete-product-btn').click(function(e) {
-            e.preventDefault(); // Prevent form submission
+            e.preventDefault(); // Prevent default form submission
+            
+            let form = $(this).closest('form');
 
             Swal.fire({
                 title: 'Are you sure?',
@@ -131,7 +95,71 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    $(this).closest('form').submit(); // Submit the form if confirmed
+                    $.ajax({
+                        url: form.attr('action'),
+                        method: form.attr('method'),
+                        data: form.serialize(),
+                        success: function(response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Product Deleted Successfully',
+                                showConfirmButton: false,
+                                timer: 1500 // Automatically close after 1.5 seconds
+                            }).then(() => {
+                                location.reload(); // Reload the page to reflect changes
+                            });
+                        },
+                        error: function(xhr) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Something went wrong!'
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    });
+
+    $(document).ready(function() {
+        $('.delete-unit-btn').click(function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            let form = $(this).closest('form');
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: form.attr('action'),
+                        method: form.attr('method'),
+                        data: form.serialize(),
+                        success: function(response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Unit Deleted Successfully',
+                                showConfirmButton: false,
+                                timer: 1500 // Automatically close after 1.5 seconds
+                            }).then(() => {
+                                location.reload(); // Reload the page to reflect changes
+                            });
+                        },
+                        error: function(xhr) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Something went wrong!'
+                            });
+                        }
+                    });
                 }
             });
         });
@@ -139,7 +167,9 @@
 
     $(document).ready(function() {
         $('.delete-category-btn').click(function(e) {
-            e.preventDefault(); // Prevent form submission
+            e.preventDefault(); // Prevent default form submission
+            
+            let form = $(this).closest('form');
 
             Swal.fire({
                 title: 'Are you sure?',
@@ -151,7 +181,71 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    $(this).closest('form').submit(); // Submit the form if confirmed
+                    $.ajax({
+                        url: form.attr('action'),
+                        method: form.attr('method'),
+                        data: form.serialize(),
+                        success: function(response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Category Deleted Successfully',
+                                showConfirmButton: false,
+                                timer: 1500 // Automatically close after 1.5 seconds
+                            }).then(() => {
+                                location.reload(); // Reload the page to reflect changes
+                            });
+                        },
+                        error: function(xhr) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Something went wrong!'
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    });
+
+    $(document).ready(function() {
+        $('.delete-brand-btn').click(function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            let form = $(this).closest('form');
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: form.attr('action'),
+                        method: form.attr('method'),
+                        data: form.serialize(),
+                        success: function(response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Brand Deleted Successfully',
+                                showConfirmButton: false,
+                                timer: 1500 // Automatically close after 1.5 seconds
+                            }).then(() => {
+                                location.reload(); // Reload the page to reflect changes
+                            });
+                        },
+                        error: function(xhr) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Something went wrong!'
+                            });
+                        }
+                    });
                 }
             });
         });
@@ -159,7 +253,9 @@
 
     $(document).ready(function() {
         $('.delete-address-btn').click(function(e) {
-            e.preventDefault(); // Prevent form submission
+            e.preventDefault(); // Prevent default form submission
+            
+            let form = $(this).closest('form');
 
             Swal.fire({
                 title: 'Are you sure?',
@@ -171,7 +267,191 @@
                 confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    $(this).closest('form').submit(); // Submit the form if confirmed
+                    $.ajax({
+                        url: form.attr('action'),
+                        method: form.attr('method'),
+                        data: form.serialize(),
+                        success: function(response) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Address Deleted Successfully',
+                                showConfirmButton: false,
+                                timer: 1500 // Automatically close after 1.5 seconds
+                            }).then(() => {
+                                location.reload(); // Reload the page to reflect changes
+                            });
+                        },
+                        error: function(xhr) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Something went wrong!'
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+
+<script>
+    $(document).ready(function() {
+        $('#add-product-btn').click(function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            let form = $('#add-product-form');
+
+            $.ajax({
+                url: form.attr('action'),
+                method: form.attr('method'),
+                data: form.serialize(),
+                success: function(response) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Product Added Successfully',
+                        showConfirmButton: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "{{ route('allP.show') }}"; // Reload the page to reflect changes
+                        }
+                    });
+                },
+                error: function(xhr) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!'
+                    });
+                }
+            });
+        });
+    });
+
+    $(document).ready(function() {
+        $('#add-address-btn').click(function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            let form = $('#add-address-form');
+
+            $.ajax({
+                url: form.attr('action'),
+                method: form.attr('method'),
+                data: form.serialize(),
+                success: function(response) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Address Added Successfully',
+                        showConfirmButton: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "{{ route('allAddresses.show') }}"; // Reload the page to reflect changes
+                        }
+                    });
+                },
+                error: function(xhr) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!'
+                    });
+                }
+            });
+        });
+    });
+
+    $(document).ready(function() {
+        $('#add-unit-btn').click(function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            let form = $('#add-unit-form');
+
+            $.ajax({
+                url: form.attr('action'),
+                method: form.attr('method'),
+                data: form.serialize(),
+                success: function(response) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Unit Added Successfully',
+                        showConfirmButton: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "{{ route('allU.show') }}"; // Reload the page to reflect changes
+                        }
+                    });
+                },
+                error: function(xhr) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!'
+                    });
+                }
+            });
+        });
+    });
+
+    $(document).ready(function() {
+        $('#add-category-btn').click(function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            let form = $('#add-category-form');
+
+            $.ajax({
+                url: form.attr('action'),
+                method: form.attr('method'),
+                data: form.serialize(),
+                success: function(response) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Category Added Successfully',
+                        showConfirmButton: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "{{ route('allC.show') }}"; // Reload the page to reflect changes
+                        }
+                    });
+                },
+                error: function(xhr) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!'
+                    });
+                }
+            });
+        });
+    });
+
+    $(document).ready(function() {
+        $('#add-brand-btn').click(function(e) {
+            e.preventDefault(); // Prevent default form submission
+            
+            let form = $('#add-brand-form');
+
+            $.ajax({
+                url: form.attr('action'),
+                method: form.attr('method'),
+                data: form.serialize(),
+                success: function(response) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Brand Added Successfully',
+                        showConfirmButton: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "{{ route('allB.show') }}"; // Reload the page to reflect changes
+                        }
+                    });
+                },
+                error: function(xhr) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!'
+                    });
                 }
             });
         });

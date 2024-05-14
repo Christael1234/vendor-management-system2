@@ -8,7 +8,7 @@
               <!-- /.card-header -->
               <!-- form start -->
             
-              <form method="post" action="{{route('unit.store')}}" >
+              <form id="add-unit-form" method="post" action="{{route('unit.store')}}" >
             @csrf
             @method('post')
                 <div class="card-body">
@@ -25,7 +25,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary swalaDefaultSuccess">Add Unit</button>
+                  <button type="submit" class="btn btn-primary" id="add-unit-btn">Add Unit</button>
                 </div>
               </form>
             </div>

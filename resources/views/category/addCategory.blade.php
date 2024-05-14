@@ -10,7 +10,7 @@
               <!-- /.card-header -->
               <!-- form start -->
             
-              <form method="post" action="{{route('category.store')}}" >
+              <form id="add-category-form" method="post" action="{{route('category.store')}}" >
             @csrf
             @method('post')
                 <div class="card-body">
@@ -27,7 +27,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary swalaDefaultSuccess">Add Category</button>
+                  <button type="submit" class="btn btn-primary" id="add-category-btn">Add Category</button>
                 </div>
               </form>
             </div>
