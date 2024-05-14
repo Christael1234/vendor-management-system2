@@ -23,12 +23,13 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($units->reverse() as $key=>$unit)
+                @foreach($units as $key=>$unit)
                 <tr>
                     <td>{{$key+1}}</td>
-                    <td>{{$unit->name}}</td>
-                    <td>{{$unit->description}}</td>
-                    <td>{{$unit->status}}</td>
+                    <td>{{ucfirst(strtolower($unit->name))}}</td>
+                    <td>{{ucfirst(strtolower($unit->description))}}</td>
+                    <td>{{ucfirst(strtolower($unit->status))}}</td>
+                  
                     <td>
                         <a href="{{ route('unit.edit', ['unit' => $unit]) }}" class="btn btn-primary">Edit</a>
                         <!-- Delete form -->

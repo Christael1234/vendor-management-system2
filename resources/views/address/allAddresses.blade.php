@@ -32,9 +32,10 @@
 
                   <tr>
                     <td>{{$address->id}}</td>
-                    <td>{{$address->Address}}</td>
-                    <td>{{$address->State}}</td>
-                    <td>{{$address->City}}</td>
+                    <td>{{ucfirst(strtolower($address->Address))}}</td>
+                    <td>{{ucfirst(strtolower($address->State))}}</td>
+                    <td>{{ucfirst(strtolower($address->City))}}</td>
+                  
                     <td>
                
             

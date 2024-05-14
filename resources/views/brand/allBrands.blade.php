@@ -32,9 +32,9 @@
 
                   <tr>
                     <td>{{$key+1}}</td>
-                    <td>{{$brand->name}}</td>
-                    <td>{{$brand->description}}</td>
-                    <td>{{$brand->status}}</td>
+                    <td>{{ucfirst(strtolower($brand->name))}}</td>
+                    <td>{{ucfirst(strtolower($brand->description))}}</td>
+                    <td>{{ucfirst(strtolower($brand->status))}}</td>
                     <td>
                
                <a href="{{ route('brand.edit', ['brand' => $brand]) }}" class="btn btn-primary">Edit</a>

@@ -31,16 +31,17 @@
 
 
                   <tr>
-                    <td>{{$category->id}}</td>
-                    <td>{{$category->name}}</td>
-                    <td>{{$category->description}}</td>
-                    <td>{{$category->status}}</td>
+                    <td>{{ucfirst(strtolower($category->id))}}</td>
+                    <td>{{ucfirst(strtolower($category->name))}}</td>
+                    <td>{{ucfirst(strtolower($category->description))}}</td>
+                    <td>{{ucfirst(strtolower($category->status))}}</td>
+                    
                     <td>
               
 
                <a href="{{ route('category.edit', ['category' => $category]) }}" class="btn btn-primary">Edit</a>
                         <!-- Delete form -->
-                        <form id="delete-form-{{$category->id}}" method="post" action="{{ route('category.delete', ['category' => $categpry]) }}" class="d-inline delete-category-form">
+                        <form id="delete-form-{{$category->id}}" method="post" action="{{ route('category.delete', ['category' => $category]) }}" class="d-inline delete-category-form">
     @csrf
     @method('delete')
     <button type="button" class="btn btn-danger delete-category-btn">Delete</button>

@@ -31,9 +31,12 @@
                 <!-- Reverse the order of $products array -->
                 <tr>
                     <td>{{$key+1}}</td>
-                    <td>{{$product->name}}</td>
-                    <td>{{$product->brand_id}}</td>
-                    <td>{{$product->category_id}}</td>
+                    <td>{{ucfirst(strtolower($product -> name))}}</td>
+                    <td>
+                    {{ucfirst(strtolower($product -> brand_id))}}</td>
+                    <td>
+                    {{ucfirst(strtolower($product -> category_id))}}</td>
+                    
                   
                     <td>{{$product->price}}</td>
                     <td>{{$product->qty}}</td>

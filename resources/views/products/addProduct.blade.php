@@ -29,7 +29,8 @@
                         <select name="brand_id" type="text" class="form-control" required>
                         <option >--</option>
                         @foreach ($brands as $brand)
-                          <option >{{$brand -> name}}</option>
+                          <option >{{ucfirst(strtolower($brand -> name))}}</option>
+                          
                         @endforeach
                         </select>
                       </div>
@@ -41,7 +42,8 @@
                         <select name="category_id" type="text" class="form-control" required>
                         <option >--</option>
                         @foreach ($categories as $category)
-                          <option >{{$category -> name}}</option>
+                        <option >{{ucfirst(strtolower($category -> name))}}</option>
+                          
                         @endforeach
                         </select>
                       </div>
@@ -53,7 +55,8 @@
                         <select name="unit_id" type="text" class="form-control" required>
                         <option >--</option>
                         @foreach ($units as $unit)
-                          <option >{{$unit -> name}}</option>
+                        <option >{{$unit -> name}}</option>
+                          
                         @endforeach
                         </select>
                       </div>
