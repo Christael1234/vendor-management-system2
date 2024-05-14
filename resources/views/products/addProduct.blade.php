@@ -13,18 +13,20 @@
             @method('post')
 
            
-                <div class="card-body">
-                  <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="Enter Product Name">
-                  </div>
+            
+                  <div class="card-body">
+    <div class="form-group">
+        <label for="name">Name*</label>
+        <input type="text" name="name" id="name" class="form-control" placeholder="Enter Product Name" required>
+    </div>
+
 
                   
                 <div class="col-sm-5">
                       <!-- select -->
                       <div class="form-group">
                         <label>Select Brand</label>
-                        <select name="brand_id" type="text" class="form-control">
+                        <select name="brand_id" type="text" class="form-control" required>
                         <option >--</option>
                         @foreach ($brands as $brand)
                           <option >{{$brand -> name}}</option>
@@ -36,7 +38,7 @@
                     <div class="col-sm-5">
                     <div class="form-group">
                         <label>Select Category</label>
-                        <select name="category_id" type="text" class="form-control">
+                        <select name="category_id" type="text" class="form-control" required>
                         <option >--</option>
                         @foreach ($categories as $category)
                           <option >{{$category -> name}}</option>
@@ -48,7 +50,7 @@
                     <div class="col-sm-5">
                     <div class="form-group">
                         <label>Select Unit</label>
-                        <select name="unit_id" type="text" class="form-control">
+                        <select name="unit_id" type="text" class="form-control" required>
                         <option >--</option>
                         @foreach ($units as $unit)
                           <option >{{$unit -> name}}</option>
@@ -63,15 +65,15 @@
           
                   <div class="form-group">
                     <label>Price</label>
-                    <input  class="form-control" type="text" name="price"  placeholder="Enter Product Price">
+                    <input  class="form-control" type="text" name="price"  placeholder="Enter Product Price" required>
                   </div>
                   <div class="form-group">
                     <label>Qty</label>
-                    <input type="text" name="qty" class="form-control" placeholder="Enter Product Quantity">
+                    <input type="text" name="qty" class="form-control" placeholder="Enter Product Quantity" required>
                   </div>
                   <div class="form-group">
                     <label>Description</label>
-                    <input type="text"  name="description" class="form-control"  placeholder="Enter Product Description">
+                    <input type="text"  name="description" class="form-control"  placeholder="Enter Product Description" >
                   </div>
                   
                   </div>
@@ -80,7 +82,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary swalaDefaultSuccess">Add Product</button>
+                  <button type="submit" class="btn btn-primary">Add Product</button>
                 </div>
               </form>
             </div>

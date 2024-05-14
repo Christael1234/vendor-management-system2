@@ -14,7 +14,7 @@ class UnitController extends Controller
     }
 
     public function createU(){
-        return view('unit.addUnit');
+        return view('unit.addUnit' );
     
     }
 

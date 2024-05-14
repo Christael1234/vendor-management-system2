@@ -39,11 +39,14 @@
                
                <a href="{{ route('brand.edit', ['brand' => $brand]) }}" class="btn btn-primary">Edit</a>
                         <!-- Delete form -->
-                        <form id="delete-form-{{$brand->id}}" method="post" action="{{ route('brand.delete', ['brand' => $brand]) }}" class="d-inline">
-                            @csrf
-                            @method('delete')
-                            <button type="submit" class="btn btn-danger swaldDefaultSuccess">Delete</button>
-                        </form>
+                   
+                        
+                        <form id="delete-form-{{$brand->id}}" method="post" action="{{ route('brand.delete', ['brand' => $brand]) }}" class="d-inline delete-brand-form">
+    @csrf
+    @method('delete')
+    <button type="button" class="btn btn-danger delete-brand-btn">Delete</button>
+</form>
+                      
               
                  
 

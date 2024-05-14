@@ -26,16 +26,9 @@
                             <p><strong>Total:</strong> <i class="fa-solid fa-naira-sign"></i>{{ $product->price * $product->qty }}</p>
                           
 
-                            <a href="{{ route('product.edit', ['product' => $product]) }}" class="btn btn-primary">Edit</a>
+                          
                             
-                            <!-- Delete form -->
-                            <form id="delete-form-{{$product->id}}" method="post" action="{{ route('product.delete', ['product' => $product]) }}" class="d-inline">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                            
-                            <a href="{{ route('allP.show', ['product' => $product]) }}" class="btn btn-secondary">Back to Products Page</a>
+                            <a href="{{ route('allP.show', ['product' => $product]) }}" class="btn btn-secondary">Back</a>
                         </div>
                     </div>
                 </div>

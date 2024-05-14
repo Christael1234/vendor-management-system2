@@ -40,11 +40,12 @@
 
                <a href="{{ route('category.edit', ['category' => $category]) }}" class="btn btn-primary">Edit</a>
                         <!-- Delete form -->
-                        <form id="delete-form-{{$category->id}}" method="post" action="{{ route('category.delete', ['category' => $category]) }}" class="d-inline">
-                            @csrf
-                            @method('delete')
-                            <button type="submit" class="btn btn-danger swaldDefaultSuccess">Delete</button>
-                        </form>
+                        <form id="delete-form-{{$category->id}}" method="post" action="{{ route('category.delete', ['category' => $categpry]) }}" class="d-inline delete-category-form">
+    @csrf
+    @method('delete')
+    <button type="button" class="btn btn-danger delete-category-btn">Delete</button>
+</form>
+                      
               
                  
 
